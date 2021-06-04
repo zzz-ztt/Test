@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/updatehero}" th:each="he:${hes}">
+    中文名：<input type="text" name="cnName" th:value="${he.getCnName()}"><br/>
+    英文名：<input type="text" name="enName" th:value="${he.getEnName()}"><br/>
+    别名：<input type="text" name="alias" th:value="${he.getAlias()}"><br/>
+    性别：<input type="number" name="sex" th:value="${he.getSex()}"><br/>
+    价格：<input type="text" name="price" th:value="${he.getPrice()}"><br/>
+    定位：<input type="text" name="gps" th:value="${he.getGps()}"><br/>
+    地区：<input type="text" name="place" th:value="${he.getPlace()}"><br/>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

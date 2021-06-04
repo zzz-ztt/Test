@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/updateIn}">
+    用户名：<input type="text" th:value="${users.getUsername()}" name="username"><br/>
+    手机号：<input type="text" th:value="${users.getPhone()}" name="phone"><br/>
+    姓名：<input type="text" th:value="${users.getName()}" name="name" placeholder="请输入姓名"><br/>
+    身份证号：<input type="text" th:value="${users.getCardId()}" name="cardId" placeholder="请输入身份证号"><br/>
+    性别：<input type="text" th:value="${users.getSex()>0?(users.getSex()==1?'男':''):'女'}" name="sex" placeholder="请输入性别"><br/>
+    地址：<input type="text" th:value="${users.getAddress()}" name="address" placeholder="请输入地址"><br/>
+    <input value="更新" type="submit">
+</form>
+
+</body>
+</html>

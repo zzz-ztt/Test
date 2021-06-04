@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzz.dao.UserDao">
+
+    <insert id="addUser" parameterType="com.zzz.pojo.User">
+        insert into user (username,password,phone,sex)values (#{name},#{password},#{phone},2)
+    </insert>
+
+    <select id="selectUser" resultType="String">
+        select password from user where username=#{name}
+    </select>
+
+    <select id="getAllUser" resultType="com.zzz.pojo.User">
+        select * from user where username=#{username}
+    </select>
+
+    <update id="addUserByUser" parameterType="com.zzz.pojo.User">
+        update user set username=#{username},name=#{name},phone=#{phone},cardId=#{cardId},
+        sex=#{sex},address=#{address} where username=#{aa}
+    </update>
+
+</mapper>
